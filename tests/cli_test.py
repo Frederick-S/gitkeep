@@ -23,5 +23,6 @@ class TestCli(unittest.TestCase):
     def tearDown(self):
         shutil.rmtree('test')
 
+
 if __name__ == '__main__':
     unittest.main()
