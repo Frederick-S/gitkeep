@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='gitkeep',
-    version='0.0.1',
+    version='0.0.2',
     description='Add .gitkeep file to empty folders.',
     url='https://github.com/Frederick-S/gitkeep',
     packages=find_packages(exclude=['tests']),

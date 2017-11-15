@@ -20,6 +20,14 @@ class TestCli(unittest.TestCase):
 
         self.assertTrue(os.path.exists('test/.gitkeep'))
 
+        os.makedirs('test/test')
+
+        # # Run main again to remove .gitkeep
+        main()
+
+        self.assertFalse(os.path.exists('test/.gitkeep'))
+        self.assertTrue(os.path.exists('test/test/.gitkeep'))
+
     def tearDown(self):
         shutil.rmtree('test')
 
