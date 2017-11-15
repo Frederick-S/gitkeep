@@ -10,13 +10,19 @@ def main():
 
 def create_gitkeep(folder):
     for root, folders, files in os.walk(folder):
+        gitkeep_path = os.path.join(root, '.gitkeep')
+        gitkeep_exists = os.path.exists(gitkeep_path)
+
+        if gitkeep_exists and (len(folders) != 0 or len(files) != 0):
+            os.remove(gitkeep_path)
+
         if len(folders) == 0 and len(files) == 0:
-            create_file(os.path.join(root, '.gitkeep'))
+            create_file(gitkeep_path)
 
 
-def create_file(file_name):
+def create_file(file_path):
     try:
-        with open(file_name, 'x') as f:
+        with open(file_path, 'x') as f:
             pass
     except FileExistsError as e:
         pass
