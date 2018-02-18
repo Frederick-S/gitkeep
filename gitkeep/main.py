@@ -13,7 +13,7 @@ def create_gitkeep(folder):
         gitkeep_path = os.path.join(root, '.gitkeep')
         gitkeep_exists = os.path.exists(gitkeep_path)
 
-        if gitkeep_exists and (len(folders) != 0 or len(files) != 0):
+        if gitkeep_exists and (len(folders) != 0 or len(files) > 1):
             os.remove(gitkeep_path)
 
         if len(folders) == 0 and len(files) == 0:
